@@ -1,30 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
-    <title>IA Economia</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IA Economia</title>
+
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <h1>IA Economia</h1>
 
-    <p>Quanto você ganha por mês?</p>
+<div class="container">
 
-    <input type="number" id="salario">
+<h1>IA Economia</h1>
 
-    <button onclick="calcular()">
-        Analisar
-    </button>
+<input type="number" id="salario" placeholder="Seu salário">
 
-    <p id="resultado"></p>
+<input type="number" id="gastos" placeholder="Seus gastos">
 
-    <script>
-        function calcular() {
-            let salario =
-                document.getElementById("salario").value;
+<button onclick="calcular()">
+Analisar Finanças
+</button>
 
-            document.getElementById("resultado")
-                .innerText =
-                "Sua renda mensal é R$ " + salario;
-        }
-    </script>
+<p id="resultado"></p>
+
+</div>
+
+<script src="script.js"></script>
+
 </body>
 </html>
