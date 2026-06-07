@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>IA Economia</title>
-
 <link rel="stylesheet" href="style.css">
 </head>
 
@@ -12,17 +12,48 @@
 
 <div class="container">
 
-<h1>IA Economia</h1>
+    <div class="painel perguntas">
 
-<input type="number" id="salario" placeholder="Seu salário">
+        <h1>IA Economia</h1>
 
-<input type="number" id="gastos" placeholder="Seus gastos">
+        <input type="number" id="salario" placeholder="Quanto você ganha por mês?">
 
-<button onclick="calcular()">
-Analisar Finanças
-</button>
+        <input type="number" id="gastos" placeholder="Quanto gasta por mês?">
 
-<p id="resultado"></p>
+        <select id="investimentos">
+            <option value="nao">Possui investimentos?</option>
+            <option value="sim">Sim</option>
+            <option value="nao">Não</option>
+        </select>
+
+        <input type="number" id="valorInvestido"
+        placeholder="Valor investido">
+
+        <input type="number" id="rendimento"
+        placeholder="Rendimento mensal dos investimentos">
+
+        <select id="dividas">
+            <option value="nao">Possui dívidas?</option>
+            <option value="sim">Sim</option>
+            <option value="nao">Não</option>
+        </select>
+
+        <input type="number" id="valorDivida"
+        placeholder="Valor total das dívidas">
+
+        <button onclick="analisar()">
+            Gerar Plano Financeiro
+        </button>
+
+    </div>
+
+    <div class="painel resultado">
+
+        <h2>Análise Financeira</h2>
+
+        <div id="analise"></div>
+
+    </div>
 
 </div>
 

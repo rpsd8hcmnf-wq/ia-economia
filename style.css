@@ -1,50 +1,64 @@
 body{
-    font-family: Arial, sans-serif;
-    background:#121212;
+    background:#0b0b0b;
+    font-family:Arial, sans-serif;
     color:white;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    height:100vh;
     margin:0;
 }
 
 .container{
-    background:#1e1e1e;
+    display:flex;
+    gap:20px;
     padding:30px;
-    border-radius:15px;
-    width:350px;
-    box-shadow:0 0 20px rgba(0,0,0,0.4);
 }
 
-h1{
-    text-align:center;
+.painel{
+    background:#363636;
+    border-radius:25px;
+    padding:25px;
+    box-shadow:0 0 15px #246cda93;
 }
 
-input{
+.perguntas{
+    width:45%;
+}
+
+.resultado{
+    width:55%;
+}
+
+h1,h2{
+    color:#0b4363;
+}
+
+input,select{
     width:100%;
     padding:12px;
-    margin:10px 0;
+    margin-top:12px;
     border:none;
-    border-radius:8px;
+    border-radius:10px;
+    background:#2d2d2d;
+    color:white;
 }
 
 button{
     width:100%;
-    padding:12px;
-    background:#00c853;
-    color:white;
+    margin-top:15px;
+    padding:15px;
     border:none;
-    border-radius:8px;
+    border-radius:10px;
+    background:#0077ff;
+    color:white;
+    font-size:16px;
     cursor:pointer;
 }
 
 button:hover{
-    background:#00a844;
+    background:#0059c7;
 }
 
-#resultado{
-    margin-top:20px;
-    font-size:18px;
-    font-weight:bold;
+.card{
+    background:#222;
+    border-radius:15px;
+    padding:15px;
+    margin-top:15px;
 }
