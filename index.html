@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IA Economia</title>
+</head>
+<body>
+    <h1>IA Economia</h1>
+
+    <p>Quanto você ganha por mês?</p>
+
+    <input type="number" id="salario">
+
+    <button onclick="calcular()">
+        Analisar
+    </button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function calcular() {
+            let salario =
+                document.getElementById("salario").value;
+
+            document.getElementById("resultado")
+                .innerText =
+                "Sua renda mensal é R$ " + salario;
+        }
+    </script>
+</body>
+</html>
