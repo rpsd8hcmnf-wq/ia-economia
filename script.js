@@ -78,4 +78,45 @@ function analisar(){
     </div>`;
 
     document.getElementById("analise").innerHTML = analise;
-}
+    📊 Score Financeiro: 72/100
+
+🟢 Saúde Financeira Boa
+
+Principais Problemas:
+• Uber muito alto
+• Pouco investimento
+• Sem reserva de emergência
+
+Plano sugerido:
+• Economizar R$ 300/mês
+• Investir R$ 200/mês
+• Quitar dívida em 8 meses
+html += `
+<div class="card">
+
+<h2>Score Financeiro</h2>
+
+<p>${score}/100</p>
+
+<div class="barra">
+    <div class="progresso"
+    style="width:${score}%">
+    </div>
+</div>
+
+</div>
+`;html += `
+<div class="card">
+
+<h2>Score Financeiro</h2>
+
+<p>${score}/100</p>
+
+<div class="barra">
+    <div class="progresso"
+    style="width:${score}%">
+    </div>
+</div>
+
+</div>
+`;
