@@ -1,81 +1,55 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>IA Economia</title>
+
 <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <div class="container">
 
-    <div class="painel perguntas">
-<input type="number" id="meta"
-placeholder="Quanto gostaria que sobrasse por mês?">
+<h1>💰 IA Economia</h1>
 
-<input type="number" id="moradia"
-placeholder="Gastos com moradia">
+<h2>Dados Financeiros</h2>
 
-<input type="number" id="alimentacao"
-placeholder="Gastos com alimentação">
+<input type="number" id="salario" placeholder="Quanto você ganha por mês?">
 
-<input type="number" id="transporte"
-placeholder="Gastos com transporte">
+<input type="number" id="gastoPrincipal" placeholder="Quanto gasta com sua principal despesa?">
 
-<input type="number" id="uber"
-placeholder="Gastos com Uber/99">
+<input type="number" id="objetivo" placeholder="Quanto deseja economizar por mês?">
 
-<input type="number" id="lazer"
-placeholder="Gastos com lazer">
+<input type="number" id="rendaAnual" placeholder="Renda anual">
 
-<input type="number" id="assinaturas"
-placeholder="Netflix, Spotify, etc">
-        <h1>IA Economia</h1>
+<input type="number" id="despesas" placeholder="Despesas mensais totais">
 
-        <input type="number" id="salario" placeholder="Quanto você ganha por mês?">
+<button onclick="analisarFinancas()">
+Analisar Situação
+</button>
 
-        <input type="number" id="gastos" placeholder="Quanto gasta por mês?">
+<div id="resultado"></div>
 
-        <select id="investimentos">
-            <option value="nao">Possui investimentos?</option>
-            <option value="sim">Sim</option>
-            <option value="nao">Não</option>
-        </select>
+<hr>
 
-        <input type="number" id="valorInvestido"
-        placeholder="Valor investido">
+<h2>Consultor Financeiro</h2>
 
-        <input type="number" id="rendimento"
-        placeholder="Rendimento mensal dos investimentos">
+<textarea
+id="relato"
+rows="6"
+placeholder="Ex: Estou gastando muito com alimentação porque viajei bastante este mês.">
+</textarea>
 
-        <select id="dividas">
-            <option value="nao">Possui dívidas?</option>
-            <option value="sim">Sim</option>
-            <option value="nao">Não</option>
-        </select>
+<button onclick="consultorIA()">
+Receber Orientação
+</button>
 
-        <input type="number" id="valorDivida"
-        placeholder="Valor total das dívidas">
-
-        <button onclick="analisar()">
-            Gerar Plano Financeiro
-        </button>
-
-    </div>
-
-    <div class="painel resultado">
-
-        <h2>Análise Financeira</h2>
-
-        <div id="analise"></div>
-
-    </div>
+<div id="consultoria"></div>
 
 </div>
 
 <script src="script.js"></script>
 
 </body>
+</html>

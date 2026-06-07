@@ -1,122 +1,129 @@
-function analisar(){
+function analisarFinancas() {
 
-    let salario =
-    Number(document.getElementById("salario").value);
+let salario = Number(document.getElementById("salario").value);
+let gastoPrincipal = Number(document.getElementById("gastoPrincipal").value);
+let objetivo = Number(document.getElementById("objetivo").value);
+let rendaAnual = Number(document.getElementById("rendaAnual").value);
+let despesas = Number(document.getElementById("despesas").value);
 
-    let gastos =
-    Number(document.getElementById("gastos").value);
+let sobra = salario - despesas;
 
-    let invest =
-    document.getElementById("investimentos").value;
+let mensagem = `
+<h3>Resumo Financeiro</h3>
 
-    let rendimento =
-    Number(document.getElementById("rendimento").value);
+<p><strong>Salário Mensal:</strong> R$ ${salario}</p>
 
-    let dividas =
-    document.getElementById("dividas").value;
+<p><strong>Despesas:</strong> R$ ${despesas}</p>
 
-    let valorDivida =
-    Number(document.getElementById("valorDivida").value);
+<p><strong>Sobra Atual:</strong> R$ ${sobra}</p>
 
-    let sobra = salario - gastos;
+<p><strong>Meta de Economia:</strong> R$ ${objetivo}</p>
 
-    let analise = "";
-
-    if(sobra <= 0){
-
-        analise += `
-        <div class="card">
-        <h3>⚠ Situação Crítica</h3>
-        <p>Você está gastando igual ou mais do que ganha.</p>
-        <p>Reduza gastos não essenciais imediatamente.</p>
-        </div>`;
-    }
-
-    if(sobra > 0 && sobra < salario*0.15){
-
-        analise += `
-        <div class="card">
-        <h3>⚠ Atenção</h3>
-        <p>Sobra pouco dinheiro no fim do mês.</p>
-        <p>Tente economizar pelo menos 20% da renda.</p>
-        </div>`;
-    }
-
-    if(dividas === "sim"){
-
-        analise += `
-        <div class="card">
-        <h3>💳 Dívidas</h3>
-        <p>Priorize quitar R$ ${valorDivida} em dívidas.</p>
-        </div>`;
-    }
-
-    if(invest === "nao"){
-
-        analise += `
-        <div class="card">
-        <h3>📈 Investimentos</h3>
-        <p>Considere criar uma reserva de emergência.</p>
-        </div>`;
-    }
-
-    if(invest === "sim"){
-
-        analise += `
-        <div class="card">
-        <h3>💰 Investimentos</h3>
-        <p>Seu rendimento mensal atual é R$ ${rendimento}</p>
-        </div>`;
-    }
-
-    analise += `
-    <div class="card">
-    <h3>📊 Plano Mensal</h3>
-    <p>Salário: R$ ${salario}</p>
-    <p>Gastos: R$ ${gastos}</p>
-    <p>Sobra: R$ ${sobra}</p>
-    </div>`;
-
-    document.getElementById("analise").innerHTML = analise;
-    📊 Score Financeiro: 72/100
-
-🟢 Saúde Financeira Boa
-
-Principais Problemas:
-• Uber muito alto
-• Pouco investimento
-• Sem reserva de emergência
-
-Plano sugerido:
-• Economizar R$ 300/mês
-• Investir R$ 200/mês
-• Quitar dívida em 8 meses
-html += `
-<div class="card">
-
-<h2>Score Financeiro</h2>
-
-<p>${score}/100</p>
-
-<div class="barra">
-    <div class="progresso"
-    style="width:${score}%">
-    </div>
-</div>
-
-</div>
-`;html += `
-<div class="card">
-
-<h2>Score Financeiro</h2>
-
-<p>${score}/100</p>
-
-<div class="barra">
-    <div class="progresso"
-    style="width:${score}%">
-    </div>
-</div>
-
-</div>
+<p><strong>Renda Anual:</strong> R$ ${rendaAnual}</p>
 `;
+
+if(sobra >= objetivo){
+
+mensagem += `
+<p style="color:green">
+✅ Você está dentro da meta financeira.
+</p>
+`;
+
+}else{
+
+let falta = objetivo - sobra;
+
+mensagem += `
+<p style="color:red">
+⚠️ Você precisa reduzir gastos ou aumentar renda em aproximadamente R$ ${falta}.
+</p>
+`;
+
+}
+
+document.getElementById("resultado").innerHTML = mensagem;
+
+}
+
+function consultorIA() {
+
+let relato =
+document.getElementById("relato").value.toLowerCase();
+
+let resposta = "";
+
+if(relato.includes("alimentação")){
+
+resposta = `
+🍽️ Foi identificado aumento nos gastos com alimentação.
+
+Sugestões:
+
+• Planeje refeições antecipadamente.
+
+• Evite aplicativos de entrega diariamente.
+
+• Defina um limite semanal para alimentação.
+
+• Como o gasto foi causado por viagem, monitore se ele retorna ao normal no próximo mês.
+`;
+
+}
+
+else if(relato.includes("cartão")){
+
+resposta = `
+💳 Foi identificado possível excesso no cartão.
+
+Sugestões:
+
+• Revise compras parceladas.
+
+• Evite utilizar o limite disponível como renda.
+
+• Priorize quitar a fatura integralmente.
+`;
+
+}
+
+else if(relato.includes("viagem")){
+
+resposta = `
+✈️ O aumento de despesas parece temporário devido à viagem.
+
+Sugestões:
+
+• Separar gastos excepcionais dos gastos normais.
+
+• Não alterar seu planejamento financeiro de longo prazo por um gasto temporário.
+
+• Compensar parte do valor nos próximos meses.
+`;
+
+}
+
+else{
+
+resposta = `
+📊 Análise realizada.
+
+Sugestões gerais:
+
+• Registrar gastos diariamente.
+
+• Criar reserva de emergência.
+
+• Definir metas mensais de economia.
+
+• Revisar despesas recorrentes.
+
+• Evitar compras por impulso.
+`;
+
+}
+
+document.getElementById("consultoria").innerHTML =
+`<pre>${resposta}</pre>`;
+
+}
